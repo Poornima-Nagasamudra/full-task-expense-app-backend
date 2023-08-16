@@ -15,11 +15,11 @@ userController.register = (req, res) => {
               user.password = encrypted 
               user.save()
                  .then((users)=>{
-                  const budget = new Budget( { userId : user._id})
-                  budget.save()
-                  const profile = new Profile({userId:user._id})
-                  profile.save()
-                    res.json(users)
+                     const budget = new Budget( { userId : user._id})
+                     budget.save()
+                     const profile = new Profile({userId:user._id})
+                     profile.save()
+                     res.json(users)
                  })
                  .catch((err)=>{
                     res.json(err)
